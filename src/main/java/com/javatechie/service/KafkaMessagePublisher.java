@@ -15,7 +15,7 @@ public class KafkaMessagePublisher {
     private KafkaTemplate<String,Object> template;
 
     public void sendMessageToTopic(String message){
-        CompletableFuture<SendResult<String, Object>> future = template.send("javatechie-demo2", message);
+        CompletableFuture<SendResult<String, Object>> future = template.send("louly-topic-demo-1", message);
         future.whenComplete((result,ex)->{
             if (ex == null) {
                 System.out.println("Sent message=[" + message +
